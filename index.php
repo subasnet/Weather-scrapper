@@ -1,3 +1,22 @@
+<?php
+
+    if ( $_GET['city']) {
+        
+        $forecastPage = file_get_contents("http://www.weather-forecast.com/locations/".$_GET['city']."/forecasts/latest");
+        
+        $weatherArrayStart = explode('3 Day Weather Forecast Summary:</b><span class="read-more-small"><span class="read-more-content"> <span class="phrase">', $forecastPage);
+        
+        $weatherArrayEnd = explode('</span></span></span>', $weatherArrayStart[1]);
+        
+        $resultWeather =  $weatherArrayEnd[0];
+    }
+        
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -50,6 +69,13 @@
             </fieldset>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+        
+        <div id="weather"><?php
+                if ( $resultWeather ) {
+                    echo '<div class="alert alert-info" role="alert">'.$resultWeather.'</div>';
+                }
+            
+            ?></div>
         
     </div>
 
