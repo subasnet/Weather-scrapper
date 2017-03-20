@@ -11,17 +11,6 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-</head>
-
-<body>
-    <h1>Hello, world!</h1>
-
     <style type="text/css">
         html {
             background: url(background.jpg) no-repeat center center fixed;
@@ -30,7 +19,41 @@
             -o-background-size: cover;
             background-size: cover;
         }
+        
+        body {
+            background: none;
+        }
+        
+        .container {
+            text-align: center;
+            margin-top: 200px;
+            width: 450px;
+        }
+        
+        input {
+            margin: 20px auto;
+        }
     </style>
+    
+</head>
+
+<body>
+    <div class="container">
+        
+        <h1>What is the weather?</h1>
+        
+        <form class="form-group">
+            <fieldset>
+                <label for="city">Enter the name of a city.</label>
+                <br>
+                <input id="city" name="city" class="form-control input-lg" type="text" placeholder="Eg. Oulu">
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
+    </div>
+
+    
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
