@@ -19,10 +19,28 @@
         
         $weatherArrayStart = explode('3 Day Weather Forecast Summary:</b><span class="read-more-small"><span class="read-more-content"> <span class="phrase">', $forecastPage);
             
+            if ( sizeof ($weatherArrayStart) > 1 ) {
+                
+                $weatherArrayEnd = explode('</span></span></span>', $weatherArrayStart[1]);
+                
+                if ( sizeof ( $weatherArrayEnd ) > 1 ) {
+                    
+                    $resultWeather =  $weatherArrayEnd[0];
+                    
+                } else {
+                    
+                    $error = "That city could not be found.";
+                    
+                }
         
-        $weatherArrayEnd = explode('</span></span></span>', $weatherArrayStart[1]);
+                
+            } else {
+                
+                $error = "That city could not be found.";
+                
+            }
         
-        $resultWeather =  $weatherArrayEnd[0];
+        
     }
         }
         
